@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 import os
-import subprocess
+from tra_cuu_sinh_vien import start_lookup
 
 st.title("Công Cụ Tra Cứu Sinh Viên 🚀")
 
@@ -21,11 +21,11 @@ if st.button("Bắt đầu tra cứu"):
 
         st.info("Đang tra cứu, vui lòng chờ...")
 
-        # Chạy script tra cứu
+        # Gọi trực tiếp hàm `start_lookup` từ `tra_cuu_sinh_vien.py`
         try:
-            result = subprocess.run(["python", "tra_cuu_sinh_vien.py"], capture_output=True, text=True)
+            start_lookup()
             st.success("Tra cứu hoàn tất! Tải file kết quả bên dưới.")
-            
+
             # Hiển thị file kết quả
             if os.path.exists("ket_qua_tra_cuu.xlsx"):
                 with open("ket_qua_tra_cuu.xlsx", "rb") as f:
@@ -34,4 +34,3 @@ if st.button("Bắt đầu tra cứu"):
             st.error(f"Lỗi trong quá trình tra cứu: {e}")
     else:
         st.warning("Vui lòng nhập đầy đủ thông tin và chọn file danh sách MSSV.")
-
