@@ -101,5 +101,5 @@ def start_lookup():
     print(f"Hoàn thành: Đã lưu kết quả vào {output_file}")
 
 # Chạy chương trình
-if __name__ == "__main__":
+def start_lookup():
     start_lookup()
