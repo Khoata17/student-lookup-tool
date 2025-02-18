@@ -3,7 +3,7 @@ import pandas as pd
 import os
 import subprocess
 
-st.title("Công Cụ Tra Cứu Sinh Viên")
+st.title("Công Cụ Tra Cứu Sinh Viên 🚀")
 
 # Upload file danh sách MSSV
 uploaded_file = st.file_uploader("Chọn file danh sách MSSV (Excel)", type=["xlsx"])
